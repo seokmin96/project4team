@@ -23,12 +23,12 @@
 			if($("#users").is(":checked")){
 				url = '/home/register/pwdSearchOkUsers';
 				userid =  $("#userid").val();
-				email = $("#email").val()
+				email = $("#email").val();
 			}
 			if($("#merchant").is(":checked")){
 				url = '/home/register/pwdSearchOkMerchant';
 				userid =  $("#m_userid").val();
-				email = $("#m_email").val()
+				email = $("#m_email").val();
 			}
 			
 			$.ajax({

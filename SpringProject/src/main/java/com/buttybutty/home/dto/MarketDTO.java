@@ -4,6 +4,7 @@ import lombok.Data;
 
 @Data
 public class MarketDTO {
+	private int ma_num; //시장 일련번호
 	private String ma_name; //시장이름
 	private String ma_addr1; //시_도
 	private String ma_addr2; //군_구
