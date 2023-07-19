@@ -12,13 +12,10 @@
 			<li>연락처 : <input type="text" name="tel1" id="tel1" size="4" value="${dto.tel1}" />
 					- <input type="text" name="tel2" id="tel2" size="4" value="${dto.tel2}" />
 					- <input type="text" name="tel3" id="tel3" size="4" value="${dto.tel3}" /></li>
-			<li>이메일 : <input type="email" name="email" id="email" value="${dto.email}" /></li>
-<%-- 			<li>주소 : <input type="text" name="addr" id="addr" value="${dto.addr}" /></li>
- --%>			
+			<li>이메일 : <input type="email" name="m_email" id="m_email" value="${dto.m_email}" /></li>
 			<li>시장 이름 : <input type="text" name="ma_name" id="ma_name" value="${dto.ma_name}" /></li>
-			<li>점포 이름 : <input type="text" name="m_name" id="m_name" value="${dto.m_name}" /></li>
-			<li>점포 연락처 : <input type="text" name="m_tel" id="m_tel" value="${dto.m_tel}" /></li>
-			<li>점포 주소 : <input type="text" name="m_addr" id="m_addr" value="${dto.m_addr}" /></li>
+			<li>가게 연락처 : <input type="text" name="m_tel" id="m_tel" value="${dto.m_tel}" /></li>
+			<li>가게 주소 : <input type="text" name="m_addr" id="m_addr" value="${dto.m_addr}" /></li>
 			<li>사업자등록번호 : <input type="text" name="m_rnum" id="m_rnum" value="${dto.m_rnum}" /></li>
 			<li><button>회원정보 수정하기</button></li>
 		</ul>
