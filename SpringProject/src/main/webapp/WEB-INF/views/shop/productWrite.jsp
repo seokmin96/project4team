@@ -4,22 +4,37 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <main>
-	<h1>상인회원수정 폼</h1>
-	<form action="/home/register/editOkMerchant" method="post">
+
+		<h1>상품등록하기</h1>
+		<form method="post" action="/home/productWrite">
 		<ul>
-			<li>아이디 : <input type="text" name="m_userid" id="m_userid" value="${dto.m_userid}" readonly /></li> 
-			<li>비밀번호 : <input type="password" name="m_userpwd" id="m_userpwd" value="${dto.m_userpwd}" /></li>
-			<li>비밀번호 확인 : <input type="password" name="userpwd2" id="userpwd2" value="${dto.m_userpwd}" /></li>
-			<li>이름 : <input type="text" name="m_username" id="m_username" value="${dto.m_username}" /></li>
-			<li>연락처 : <input type="text" name="tel1" id="tel1" size="4" value="${dto.tel1}" />
-					- <input type="text" name="tel2" id="tel2" size="4" value="${dto.tel2}" />
-					- <input type="text" name="tel3" id="tel3" size="4" value="${dto.tel3}" /></li>
-			<li>이메일 : <input type="email" name="m_email" id="m_email" value="${dto.m_email}" /></li>
-			<li>시장 이름 : <input type="text" name="ma_name" id="ma_name" value="${dto.ma_name}" /></li>
-			<li>가게 연락처 : <input type="text" name="m_tel" id="m_tel" value="${dto.m_tel}" /></li>
-			<li>가게 주소 : <input type="text" name="m_addr" id="m_addr" value="${dto.m_addr}" /></li>
-			<li>사업자등록번호 : <input type="text" name="m_rnum" id="m_rnum" value="${dto.m_rnum}" /></li>
-			<li><button>회원정보 수정하기</button></li>
+			<li>상품이름</li>
+			<li><input type="text" name="p_no" id="p_no" value="${dto.p_no}" /></li>
+			<li>상인아이디</li>
+			<li><input type="text" name="m_userid" id="m_userid" value="${m_userid}" /></li>
+			<li>상품명</li>
+			<li><input type="text" name="p_name" id="p_name" value="${p_name}" /></li>
+			<li>상품이미지</li>
+			<li><input type="text" name="p_img" id="p_img" value="${p_img}" /></li>
+			<li>상품가격</li>
+			<li><input type="text" name="p_price" id="p_price" value="${p_price}" /></li>
+			<li>상품할인율</li>
+			<li><input type="text" name="p_dis" id="p_dis" value="${p_dis}" /></li>
+			<li>상품등록날짜</li>
+			<li><input type="text" name="p_date" id="p_date" value="${p_date}" /></li>
+			<li>시장명</li>
+			<li><input type="text" name="ma_name" id="ma_name" value="${ma_name}" /></li>
+			<li>가게명</li>
+			<li><input type="text" name="m_name" id="m_name" value="${m_name}" /></li>
+			<li>상품내용</li>
+			<li><input type="text" name="p_content" id="p_content" value="${p_content}" /></li>
+			<li>공개여부</li>
+			<li><input type="text" name="p_pub" id="p_pub" value="${p_pub}" /></li>
+			<li>상품이름</li>
+			<li><input type="text" name="p_ddu" id="p_ddu" value="${p_ddu}" /></li>
+			<li>떨이여부</li>
+			<li><textarea name="content" id="content"></textarea></li>
+			<li><input type="submit" value="글등록"/></li>
 		</ul>
-	</form>
+		</form>	
 </main>
