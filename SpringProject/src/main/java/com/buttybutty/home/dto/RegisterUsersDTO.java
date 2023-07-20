@@ -4,12 +4,12 @@ import lombok.Data;
 
 @Data
 public class RegisterUsersDTO {
-	private String userid;
-	private String username;
-	private String userpwd;
-	private String tel;
-	private String email;
-	private String addr;
+	private String userid; //아이디
+	private String username; //이름
+	private String userpwd; //비밀번호
+	private String tel; //연락처
+	private String email; //이메일
+	private String addr; //주소
 	
 	private String tel1;
 	private String tel2;

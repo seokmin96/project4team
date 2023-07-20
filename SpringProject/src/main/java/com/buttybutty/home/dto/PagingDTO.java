@@ -3,16 +3,16 @@ package com.buttybutty.home.dto;
 //페이지 관련 변수, 검색어 관련 변수
 public class PagingDTO {
 		private int nowPage = 1; //현재 페이지(기본값 : 1페이지)
-		private int onePageRecord = 5; //한 페이지에 표시할 레코드 개수(5개씩 설정)
+		private int onePageRecord = 10; //한 페이지에 표시할 레코드 개수(10개씩 설정)
 		private int totalRecord; //총 레코드 개수
 		private int totalPage; // 총 페이지 개수
 	
-		private int onePageNumCount = 5; //한 페이지에 표시되는 페이지 번호 개수(5개씩 설정)
+		private int onePageNumCount = 10; //한 페이지에 표시되는 페이지 번호 개수(10개씩 설정)
 		private int startPageNum = 1; // 페이지에서 표시되는 시작페이지 번호
 	
-		private int lastPageRecord = 5;//마지막 페이지의 남아있는 레코드 수(기본값 5개로 설정)
+		private int lastPageRecord = 10;//마지막 페이지의 남아있는 레코드 수(기본값 10개로 설정)
 
-		private String searchKey; //검색키 subject, content, userid
+		private String searchKey; //검색키
 		private String searchWord; //검색어
 	
 		public int getNowPage() {

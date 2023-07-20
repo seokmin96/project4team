@@ -8,8 +8,8 @@
 		values (#{userid}, #{userpwd}, #{username}, #{tel}, #{email}, #{addr})
 	</insert>
 	<insert id="merchantInsert">
-		insert into merchant(m_userid, m_userpwd, m_username, tel, email, ma_name, m_name, m_tel, m_rnum, m_addr)
-		values (#{m_userid}, #{m_userpwd}, #{m_username}, #{tel}, #{email},#{ma_name}, #{m_name}, #{m_tel}, #{m_rnum}, #{m_addr})
+		insert into merchant(m_userid, m_userpwd, m_username, tel, m_email, ma_name, m_tel, m_rnum, m_addr)
+		values (#{m_userid}, #{m_userpwd}, #{m_username}, #{tel}, #{m_email},#{ma_name}, #{m_tel}, #{m_rnum}, #{m_addr})
 	</insert>
 	
 	<select id="usersSelect" resultType="com.buttybutty.home.dto.RegisterUsersDTO">
@@ -26,8 +26,8 @@
 		where userid=#{userid}
 	</update>
 	<update id="merchantUpdate">
-		update merchant set m_username=#{m_username}, m_userpwd=#{m_userpwd}, tel=#{tel}, email=#{email},
-			ma_name=#{ma_name}, m_name=#{m_name},m_tel=#{m_tel},m_addr=#{m_addr},m_rnum=#{m_rnum}
+		update merchant set m_username=#{m_username}, m_userpwd=#{m_userpwd}, tel=#{tel}, m_email=#{m_email},
+			ma_name=#{ma_name},m_tel=#{m_tel},m_addr=#{m_addr},m_rnum=#{m_rnum}
 		where m_userid=#{m_userid}
 	</update>
 	
@@ -36,8 +36,8 @@
 		where username=#{username} and email=#{email}
 	</select>
 	<select id="merchantIdSearch" resultType="com.buttybutty.home.dto.RegisterMerchantDTO">
-		select m_userid, email from merchant
-		where m_username=#{m_username} and email=#{email}
+		select m_userid, m_email from merchant
+		where m_username=#{m_username} and m_email=#{m_email}
 	</select>
 	
 	<select id="usersPwdSearch" resultType="com.buttybutty.home.dto.RegisterUsersDTO">
@@ -45,7 +45,7 @@
 		where userid=#{userid} and email=#{email}
 	</select>
 	<select id="merchantPwdSearch" resultType="com.buttybutty.home.dto.RegisterMerchantDTO">
-		select m_userpwd, email from merchant
-		where m_userid=#{m_userid} and email=#{email}
+		select m_userpwd, m_email from merchant
+		where m_userid=#{m_userid} and m_email=#{m_email}
 	</select>
 </mapper>

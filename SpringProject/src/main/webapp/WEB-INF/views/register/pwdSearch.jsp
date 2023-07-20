@@ -19,20 +19,23 @@
 		$("input[value=비밀번호찾기]").click(function(){
 			var url = null;
 			var username = null;
+			var email = null;
 			if($("#users").is(":checked")){
 				url = '/home/register/pwdSearchOkUsers';
 				userid =  $("#userid").val();
+				email = $("#email").val();
 			}
 			if($("#merchant").is(":checked")){
 				url = '/home/register/pwdSearchOkMerchant';
 				userid =  $("#m_userid").val();
+				email = $("#m_email").val();
 			}
 			
 			$.ajax({
 				url : url,
 				data : {
 					userid : userid,
-					email : $("#email").val()
+					email : email
 				},
 				type : "post",
 				success : function(result){
@@ -77,7 +80,7 @@
 		<form id="PwdSearchFrm">
 			<ul>
 				<li>아이디 : <input type="text" name="m_userid" id="m_userid" /></li>
-				<li>이메일 : <input type="text" name="email" id="email" placeholder="예)abc@naver.com" /></li>
+				<li>이메일 : <input type="text" name="m_email" id="m_email" placeholder="예)abc@naver.com" /></li>
 				<li><input type="button" value="비밀번호찾기" /></li>
 			</ul>
 		</form>
