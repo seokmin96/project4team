@@ -11,6 +11,7 @@
 		intercepter처리하기
 		1. beans태그에 context, mvc를 추가
 	-->
+	<!--
 	<mvc:interceptors>
 		<mvc:interceptor>
 			<mvc:mapping path="/board/boardWrite" />
@@ -22,6 +23,7 @@
 			<bean class="com.smart.home.LoginInterceptor"></bean>
 		</mvc:interceptor>
 	</mvc:interceptors>
+	-->
 	
 	<!-- 파일업로드 객체 생성 -->
 	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"></bean>

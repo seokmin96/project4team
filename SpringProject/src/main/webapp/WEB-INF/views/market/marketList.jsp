@@ -43,7 +43,7 @@
 	<!-- 선택 버튼 -->
 	<div class="listSelect">
 		<button>전통시장 목록</button>
-		<button>정보 게시판</button>
+		<a href="/home/market/marketBoard"><button>정보 게시판</button></a>
 	</div>
 	
 	<!-- 검색창 -->
