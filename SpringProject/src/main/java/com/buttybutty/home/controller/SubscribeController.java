@@ -29,7 +29,7 @@ public class SubscribeController {
 	
 	@RequestMapping("/subscribe/detail2307")
 	public String SubDetail7() {
-		return "subscribe/SubDetail7";
+		return "subscribe/SubDetail7"; 
 	}
 	
 	// 구독 신청 완료된 페이지 매핑

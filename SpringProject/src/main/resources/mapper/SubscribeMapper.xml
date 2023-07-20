@@ -8,6 +8,6 @@
 	<insert id="SubscribeOk">
 		insert into subscribe(sub_no, userid, sub_name, sub_tel, sub_addr, sub_cash_name, sub_date)
 		values (sub_no_seq.nextval, #{userid}, #{sub_name}, #{sub_tel}, #{sub_addr}, #{sub_cash_name},sysdate)
-	</insert>
+	</insert> 
 </mapper>
 

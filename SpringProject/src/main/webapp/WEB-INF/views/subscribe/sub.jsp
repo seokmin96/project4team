@@ -11,7 +11,7 @@
 		  <div class="col-sm-6">
 		    <div class="card">
 		      <div class="card-body">
-		        <h5 class="card-title">7월의 꾸러미</h5>
+		        <h5 class="card-title">7월의 꾸러미</h5> 
 		        <p class="card-text">송정매일시장 상인회와 함께 준비한 제철 먹거리(수박, 참외, 자두) 꾸러미를 소개합니다.</p>
 		        <a href="/home/subscribe/detail2307" class="btn btn-warning">꾸러미 보러가기</a>
 		      </div>

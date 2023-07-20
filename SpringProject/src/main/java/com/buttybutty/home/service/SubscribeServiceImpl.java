@@ -13,7 +13,7 @@ public class SubscribeServiceImpl implements SubscribeService {
 	@Autowired
 	SubscribeDAO dao;
 	
-	@Override
+	@Override 
 	public int SubscribeOk(SubscribeDTO dto) {
 		return dao.SubscribeOk(dto);
 	}

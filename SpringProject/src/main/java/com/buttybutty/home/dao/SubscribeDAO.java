@@ -4,5 +4,5 @@ import com.buttybutty.home.dto.SubscribeDTO;
 
 public interface SubscribeDAO {
 
-	public int SubscribeOk(SubscribeDTO dto);
+	public int SubscribeOk(SubscribeDTO dto); 
 }

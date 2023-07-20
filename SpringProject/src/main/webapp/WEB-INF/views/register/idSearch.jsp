@@ -19,20 +19,23 @@
 		$("input[value=아이디찾기]").click(function(){
 			var url = null;
 			var username = null;
+			var email=null;
 			if($("#users").is(":checked")){
 				url = '/home/register/idSearchOkUsers';
 				username =  $("#username").val();
+				email = $("#email").val()
 			}
 			if($("#merchant").is(":checked")){
 				url = '/home/register/idSearchOkMerchant';
 				username =  $("#m_username").val();
+				email = $("#m_email").val()
 			}
 			
 			$.ajax({
 				url : url,
 				data : {
 					username : username,
-					email : $("#email").val()
+					email : email
 				},
 				type : "post",
 				success : function(result){
@@ -77,7 +80,7 @@
 		<form id="idSearchFrm">
 			<ul>
 				<li>이름 : <input type="text" name="m_username" id="m_username" /></li>
-				<li>이메일 : <input type="text" name="email" id="email" placeholder="예)abc@naver.com" /></li>
+				<li>이메일 : <input type="text" name="m_email" id="m_email" placeholder="예)abc@naver.com" /></li>
 				<li><input type="button" value="아이디찾기" /></li>
 			</ul>
 		</form>

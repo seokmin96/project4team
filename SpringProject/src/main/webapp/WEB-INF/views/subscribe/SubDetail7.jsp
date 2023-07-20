@@ -61,7 +61,7 @@
 		                </br>
 		                
 		                <h3>7월 제철 먹거리 꾸러미 신청 폼</h3>
-		                </br>
+		                </br> 
 		                <!-- 확인창  -->
 						<div class="alert alert-warning alert-dismissible fade show" role="alert">
 						  <strong>배송 안내   </strong>입금이 확인되면 매월 25일 일괄 발송 됩니다. 

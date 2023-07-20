@@ -238,7 +238,7 @@ public class RegisterController {
 				MimeMessage message = mailSender.createMimeMessage();
 				MimeMessageHelper messageHelper = new MimeMessageHelper(message, true, "UTF-8");
 				messageHelper.setFrom("minjee3333@naver.com"); //보내는 메일 주소
-				messageHelper.setTo(resultDTO.getEmail()); //받는 메일 주소
+				messageHelper.setTo(resultDTO.getM_email()); //받는 메일 주소
 				messageHelper.setSubject(subject); //메일 제목
 				messageHelper.setText("text/html; charset=UTF-8",content); //헤더와 메일 내용
 				mailSender.send(message);
@@ -308,7 +308,7 @@ public class RegisterController {
 				MimeMessage message = mailSender.createMimeMessage();
 				MimeMessageHelper messageHelper = new MimeMessageHelper(message, true, "UTF-8");
 				messageHelper.setFrom("minjee3333@naver.com"); //보내는 메일 주소
-				messageHelper.setTo(resultDTO.getEmail()); //받는 메일 주소
+				messageHelper.setTo(resultDTO.getM_email()); //받는 메일 주소
 				messageHelper.setSubject(subject); //메일 제목
 				messageHelper.setText("text/html; charset=UTF-8",content); //헤더와 메일 내용
 				mailSender.send(message);
