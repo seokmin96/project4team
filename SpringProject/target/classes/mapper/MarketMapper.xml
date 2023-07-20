@@ -12,7 +12,6 @@
 	<select id="marketAllSelect"
 		resultType="com.buttybutty.home.dto.MarketDTO">
 		select * from
-<<<<<<< HEAD
 		(select * from
 		(select * from market_data
 		<if test="searchWord != null">
@@ -22,7 +21,7 @@
 		where <![CDATA[rownum <= ${nowPage*onePageRecord}]]>
 		order by ma_num asc)
 		where <![CDATA[rownum <= ${lastPageRecord}]]> <!-- 숫자이기 때문에 $,# 둘다 가능 -->
-=======
+
 			(select * from
 				(select * from market_data 
 				<if test="searchWord != null">
@@ -32,7 +31,6 @@
 			where <![CDATA[rownum <= ${nowPage*onePageRecord}]]>
 			order by ma_num asc)
 		where <![CDATA[rownum <= ${lastPageRecord}]]>
->>>>>>> branch 'master' of https://github.com/seokmin96/project4team
 		order by ma_num desc
 	</select>
 	<select id="totalRecord" resultType="int">
