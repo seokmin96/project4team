@@ -19,23 +19,46 @@
 		overflow:hidden; /*넘친 값 숨기기*/
 		text-overflow:ellipsis; /*...으로 표시하기*/
 	}
-	
+	.page {
+		width:480px;
+		padding-left:250px;
+	}
 	.page li{
 		float:left;
 		width:40px;
 		height:40px;
 		text-align:center;
 	}
-	.search{
+	.search, .listSelect{
 		text-align:center;
 	}
+	
+	
 </style>
 
 <main>
 	<h1>전통시장 둘러보기</h1>
 	<iframe src = "<%= request.getContextPath() %>/resources/main.html" width = "1000" height = "500" ></iframe>
 	
-	<h1>전통시장 정보 게시판</h1>
+	<!-- 선택 버튼 -->
+	<div class="listSelect">
+		<button>전통시장 목록</button>
+		<a href="/home/market/marketBoard"><button>정보 게시판</button></a>
+	</div>
+	
+	<!-- 검색창 -->
+	<div class="search">
+		<form action="/home/market/marketList">
+			<select name="searchKey" id="">
+				<option value="ma_name">시장명</option>
+				<option value="ma_addr1">시/도</option>
+			</select>
+			<input type="text" name="searchWord" id="searchWord" />
+			<input type="submit" value="Search"  />
+		</form>
+	</div>
+	
+	<!-- 전통시장 리스트 -->
 	<c:if test="${logType=='M'}">
 		<div><a href="#">시장 정보 등록하기</a></div>
 	</c:if>
@@ -52,7 +75,6 @@
 		<c:forEach var="dto" items="${list}"> <!-- var:변수명, items:리스트 -->
 			<li>${dto.ma_num}</li>
 			<li>${dto.ma_name}</li>
-			<%-- <li><a href='/home/board/boardView?no=${dto.no}&nowPage=${pDTO.nowPage}<c:if test="${pDTO.searchWord!=null}">&searchKey=${pDTO.searchKey}&searchWord=${pDTO.searchWord}</c:if>'>${dto.subject}</a></li> --%>
 			<li>${dto.ma_addr1}</li>
 			<li>${dto.ma_addr2}</li>
 			<li>${dto.ma_count}</li>
@@ -67,15 +89,16 @@
 		</c:forEach>
 	</ul>
 	
+	<!-- 페이징 -->
 	<div class="page">
 		<ul>
 			<!-- 이전 페이지 -->
 			<!-- 현재페이지가 1이면 prev를 눌러도 페이지이동이 없도록, 2이상이면 prev를 누르면 이전페이지로 이동-->
 			<c:if test="${pDTO.nowPage == 1}">
-				<li>prev</li>
+				<li class='myButton'>prev</li>
 			</c:if>
 			<c:if test="${pDTO.nowPage > 1}">
-				<li><a href='/home/market/marketList?nowPage=${pDTO.nowPage-1}<c:if test="${pDTO.searchWord!=null}">&searchKey=${pDTO.searchKey}&searchWord=${pDTO.searchWord}</c:if>'>prev</a></li>
+				<li class='myButton'><a href='/home/market/marketList?nowPage=${pDTO.nowPage-1}<c:if test="${pDTO.searchWord!=null}">&searchKey=${pDTO.searchKey}&searchWord=${pDTO.searchWord}</c:if>'>prev</a></li>
 			</c:if>
 			
 			<!-- 페이지 번호 -->
@@ -83,32 +106,23 @@
 			<c:forEach var="p" begin="${pDTO.startPageNum}" end="${pDTO.startPageNum+pDTO.onePageNumCount-1}" step="1">
 				<c:if test="${p <= pDTO.totalPage}">
 					<c:if test="${p == pDTO.nowPage}">
-						<li style="background:yellow"><a href='/home/market/marketList?nowPage=${p}<c:if test="${pDTO.searchWord!=null}">&searchKey=${pDTO.searchKey}&searchWord=${pDTO.searchWord}</c:if>'>${p}</a></li>
+						<li class='myButton' style="background:#ffd700"><a href='/home/market/marketList?nowPage=${p}<c:if test="${pDTO.searchWord!=null}">&searchKey=${pDTO.searchKey}&searchWord=${pDTO.searchWord}</c:if>'>${p}</a></li>
 					</c:if>
 					<c:if test="${p != pDTO.nowPage}">
-						<li><a href='/home/market/marketList?nowPage=${p}<c:if test="${pDTO.searchWord!=null}">&searchKey=${pDTO.searchKey}&searchWord=${pDTO.searchWord}</c:if>'>${p}</a></li>
+						<li class='myButton'><a href='/home/market/marketList?nowPage=${p}<c:if test="${pDTO.searchWord!=null}">&searchKey=${pDTO.searchKey}&searchWord=${pDTO.searchWord}</c:if>'>${p}</a></li>
 					</c:if>
 				</c:if>
 			</c:forEach>
 
 			<!-- 다음 페이지 -->
 			<c:if test="${pDTO.nowPage >= pDTO.totalPage}">
-				<li>next</li>
+				<li class='myButton'>next</li>
 			</c:if>
 			<c:if test="${pDTO.nowPage < pDTO.totalPage}">
-				<li><a href='/home/market/marketList?nowPage=${pDTO.nowPage+1}<c:if test="${pDTO.searchWord!=null}">&searchKey=${pDTO.searchKey}&searchWord=${pDTO.searchWord}</c:if>'>next</a></li>
+				<li class='myButton'><a href='/home/market/marketList?nowPage=${pDTO.nowPage+1}<c:if test="${pDTO.searchWord!=null}">&searchKey=${pDTO.searchKey}&searchWord=${pDTO.searchWord}</c:if>'>next</a></li>
 			</c:if>
 		</ul>
 	</div>
 	
-	<div class="search">
-		<form action="/home/market/marketList">
-			<select name="searchKey" id="">
-				<option value="ma_name">시장명</option>
-				<option value="ma_addr1">시/도</option>
-			</select>
-			<input type="text" name="searchWord" id="searchWord" />
-			<input type="submit" value="Search" />
-		</form>
-	</div>
+	
 </main>
