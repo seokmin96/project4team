@@ -8,9 +8,8 @@
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property>
-		<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"></property>
-		<property name="username" value="c##butty"></property> <!--오라클계정-->
-		<property name="password" value="qjxlwk"></property> <!--오라클비밀번호-->
+		<property name="url" value="jdbc:oracle:thin:@project-db-stu2.smhrd.com:1524:xe"></property>		<property name="username" value="seocho_0718_3"></property> <!--오라클계정-->
+		<property name="password" value="smhrd3"></property> <!--오라클비밀번호-->
 	</bean>
 	
 	<bean id="SqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
