@@ -2,6 +2,8 @@ package com.buttybutty.home.service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.buttybutty.home.dto.BoardDTO;
 import com.buttybutty.home.dto.PagingDTO;
 import com.buttybutty.home.dto.ProductDTO;

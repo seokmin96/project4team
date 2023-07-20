@@ -10,6 +10,7 @@ import com.buttybutty.home.dto.BoardDTO;
 import com.buttybutty.home.dto.PagingDTO;
 import com.buttybutty.home.dto.ProductDTO;
 
+@Service
 public class ProductServiceImpl implements ProductService {
 	@Autowired
 	ProductDAO dao;
