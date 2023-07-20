@@ -1,4 +1,4 @@
-package com.buttybutty.home.dao;
+package com.buttybutty.home.service;
 
 import java.util.List;
 
@@ -6,7 +6,7 @@ import com.buttybutty.home.dto.BoardDTO;
 import com.buttybutty.home.dto.PagingDTO;
 import com.buttybutty.home.dto.ProductDTO;
 
-public interface ProductDAO {
+public interface ProductService {
 	// 상품 등록
 	public int productInsert(ProductDTO dto);
 

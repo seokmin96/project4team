@@ -31,5 +31,5 @@
 	</form>
 </main>
 <script>
-	CKEDITOR.ClassicEditor.create(document.getElementById("content"),option);
+	CKEDITOR.ClassicEditor.create(document.getElementById("mb_content"),option);
 </script>

@@ -60,10 +60,4 @@
 	<delete id="boardDel">
 		delete from market_board where mab_no=${param1} and m_userid=#{param2}
 	</delete>
-
-
-
-
-	
-	
 </mapper>
