@@ -19,7 +19,7 @@
 				order by ma_num desc) 
 			where <![CDATA[rownum <= ${nowPage*onePageRecord}]]>
 			order by ma_num asc)
-		where <![CDATA[rownum <= ${lastPageRecord}]]> <!-- 숫자이기 때문에 $,# 둘다 가능 -->
+		where <![CDATA[rownum <= ${lastPageRecord}]]>
 		order by ma_num desc
 	</select>
 
