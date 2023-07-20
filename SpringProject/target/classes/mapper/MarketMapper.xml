@@ -22,5 +22,48 @@
 		where <![CDATA[rownum <= ${lastPageRecord}]]>
 		order by ma_num desc
 	</select>
+	
+	<select id="boardtotalRecord" resultType="int">
+		select count(ma_num) cnt from market_board
+		<if test="searchWord != null">
+			where ${searchKey} like '%${searchWord}%'
+		</if>
+	</select>
+	<select id="boardAllSelect" resultType="com.buttybutty.home.dto.BoardDTO">
+		select * from
+			(select * from
+				(select mab_no, ma_name, m_userid, mb_title, to_char(mb_date, 'MM-DD HH:MI') writedate, mb_hit
+				 from market_board 
+				<if test="searchWord != null">
+					where ${searchKey} like '%${searchWord}%' 
+				</if>
+				order by mab_no desc) 
+			where <![CDATA[rownum <= ${nowPage*onePageRecord}]]>
+			order by mab_no asc)
+		where <![CDATA[rownum <= ${lastPageRecord}]]>
+		order by mab_no desc
+	</select>
+	<select id="boardOneSelect" resultType="com.buttybutty.home.dto.BoardDTO">
+		select * from market_board where mab_no=${param1}
+	</select>
+	<update id="hitCount">
+		update market_board set mb_hit=mb_hit+1 where mab_no=${param1}
+	</update>
+	<insert id="boardInsert">
+		insert into market_board(mab_no, ma_name, mb_title, mb_content, m_userid, mb_hit, mb_date)
+		values(market_board_seq.nextval, #{ma_name}, #{mb_title}, #{mb_content},#{m_userid},0, sysdate )
+	</insert>
+	<update id="boardEdit">
+		update market_board set mb_title = #{mb_title}, mb_content=#{mb_content}
+		where mab_no=#{no} and m_userid=#{m_userid}
+	</update>
+	<delete id="boardDel">
+		delete from market_board where mab_no=${param1} and m_userid=#{param2}
+	</delete>
 
+
+
+
+	
+	
 </mapper>
