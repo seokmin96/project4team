@@ -21,29 +21,33 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
-	public int productTotalRecord(PagingDTO pDTO) {
-		return dao.productTotalRecord(pDTO);
-	}
-
-
-	@Override
-	public int productEdit(ProductDTO dto) {
-		return dao.productEdit(dto);
+	public List<ProductDTO> productList(PagingDTO dto) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
-	public int productDel(int no, String m_userid) {
-		return dao.productDel(no, m_userid);
+	public int producttotalRecord(PagingDTO pDTO) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 	@Override
-	public List<ProductDTO> shopList(PagingDTO pDTO) {
-		return dao.productList(pDTO);
+	public ProductDTO getBoard(int no) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
-	public ProductDTO getProduct(int p_no) {
-		return dao.getProduct(p_no);
+	public int productEdit(BoardDTO dto) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int productDel(int no, String userid) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }

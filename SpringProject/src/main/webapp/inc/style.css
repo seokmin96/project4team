@@ -11,7 +11,7 @@ body, ul, li{
 	text-align:center;
 }
 
- 
+
 /*메뉴*/
 nav a:link, nav a:visited, nav a:hover{
 	text-decoration:none;
@@ -19,7 +19,7 @@ nav a:link, nav a:visited, nav a:hover{
 }
 nav{
 	height:40px;
-	background-color:#FFC107;
+	background-color:#FFDC3C;
 }
 nav > ul{
 	width:1100px;
@@ -30,11 +30,6 @@ nav li{
 	float:left;
 	line-height:40px;
 	padding:0 50px;
-	color: black !important;
-}
-
-a, a:visited, a:hover, a:active {
-  color: inherit;
 }
 
 footer{
