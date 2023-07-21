@@ -94,8 +94,8 @@ public class RegisterController {
 	}
 	//상인 로그인 확인
 	@PostMapping("/loginOkMerchant")
-	public ModelAndView loginOkMerchant(String userid, String userpwd, HttpSession session) {
-			RegisterMerchantDTO dto = service.merchantSelect(userid, userpwd);
+	public ModelAndView loginOkMerchant(String m_userid, String m_userpwd, HttpSession session) {
+			RegisterMerchantDTO dto = service.merchantSelect(m_userid, m_userpwd);
 			ModelAndView mav = new ModelAndView();
 			if(dto!= null) {//성공 -> 홈으로 이동
 					//세션에 아이디,이름,로그인상태 기록

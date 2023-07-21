@@ -10,19 +10,28 @@
   </insert>
   
   <select id="productList" resultType="com.buttybutty.home.dto.ProductDTO">
-    select *
-    from (
-      select p_no, p_name, p_price, to_char(writedate, 'MM-DD HH:MI') p_date 
+    select * from
+    (select * from 
+      (select p_no, p_name, p_price, to_char(p_date, 'MM-DD HH:MI') p_date 
       from product_data
-      <if test="searchWord != null">
-        where ${searchKey} like '%${searchWord}%' 
-      </if>
-      order by p_no desc
-    )
-    where <![CDATA[rownum <= ${nowPage * onePageRecord}]]>
-    <![CDATA[rownum <= ${lastPageRecord}]]>
+		      <if test="searchWord != null">
+		        where ${searchKey} like '%${searchWord}%' 
+		      </if>
+      			order by p_no desc) 
+			where <![CDATA[rownum <= ${nowPage*onePageRecord}]]>
+			order by p_no asc)
+		where <![CDATA[rownum <= ${lastPageRecord}]]> <!-- 숫자이기 때문에 $,# 둘다 가능 -->
+		order by p_no desc
     <!-- WHERE절의 '<=' 비교연산자가 '<' 기호 때문에 (태그<>) 오류 => <![CDATA[ 코드부분 ]]> -->
   </select>
+  
+  <select id="productTotalRecord" resultType="int">
+		select count(p_no) cnt from product_data
+		<if test="searchWord != null">
+			where ${searchKey} like '%${searchWord}%' <!-- ${searchKey}는 subject,content,userid 중 하나 -->
+		</if>
+  </select>
+	
   <select id="getProduct" resultType="com.buttybutty.home.dto.ProductDTO">
     select p_no, m_userid, p_name, p_img, p_price, p_dis, p_date, ma_name, m_name, p_content 
     from product_data

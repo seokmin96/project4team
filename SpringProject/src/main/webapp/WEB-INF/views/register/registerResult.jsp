@@ -4,4 +4,4 @@
 <script>
 	alert("회원등록이 실패하였습니다.");
 	history.back();
-</script>
+</script> 

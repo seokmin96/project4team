@@ -79,6 +79,7 @@ h1{
 	});
 </script>
 <main>
+<<<<<<< HEAD
 
 <h1>상품등록하기</h1>
 <form class="form-container" method="post" action="/home/productWrite">
@@ -178,3 +179,7 @@ h1{
 <script>
 /* CKEDITOR.ClassicEditor.create(document.getElementById("content"), option); */
 </script>
+=======
+	
+</main>
+>>>>>>> branch 'master' of https://github.com/seokmin96/project4team.git
