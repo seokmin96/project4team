@@ -8,5 +8,5 @@
 </head>
 <main>
 	<h1>장보기</h1>
-	<div><a href="/home/shop/productWrite">글쓰기</a></div>
+	<div><a href="/home/shop/productWrite">상품등록하기</a></div>
 </main>

@@ -26,13 +26,13 @@ public class MarketServiceImpl implements MarketService {
 	}
 
 	@Override
-	public int boardwriteOk(BoardDTO dto) {
-		return dao.boardwriteOk(dto);
+	public int boardInsert(BoardDTO dto) {
+		return dao.boardInsert(dto);
 	}
 
 	@Override
-	public List<BoardDTO> boardlist(PagingDTO pDTO) {
-		return dao.boardlist(pDTO);
+	public List<BoardDTO> boardAllSelect(PagingDTO pDTO) {
+		return dao.boardAllSelect(pDTO);
 	}
 
 	@Override
@@ -41,8 +41,8 @@ public class MarketServiceImpl implements MarketService {
 	}
 
 	@Override
-	public BoardDTO getBoard(int no) {
-		return dao.getBoard(no);
+	public BoardDTO boardOneSelect(int no) {
+		return dao.boardOneSelect(no);
 	}
 
 	@Override
